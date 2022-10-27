@@ -33,7 +33,7 @@ class App extends React.Component {
       <div className="app">
         <div className="card">
           <h1 className="heading">{this.state.fact}</h1>
-          <button className="button" onClick={this.fetchFact}>
+          <button className="button" onClick={() => this.fetchFact()}>
             <span>NEXT FACT PLEASE!</span>
           </button>
         </div>
