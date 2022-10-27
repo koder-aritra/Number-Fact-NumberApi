@@ -4,8 +4,12 @@ import axios from 'axios';
 import './App.css';
 
 class App extends React.Component {
-  state = {
-    fact: ''
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      fact: ''
+    }
   }
 
   componentDidMount() {
@@ -16,7 +20,7 @@ class App extends React.Component {
     axios.get('//numbersapi.com/random/trivia')
       .then((response) => {
         //console.log(response.data);
-        this.setState({fact:response.data});
+        this.setState({ fact: response.data });
       })
       .catch((error) => {
         console.log(error);
@@ -24,6 +28,7 @@ class App extends React.Component {
   }
 
   render() {
+
     return (
       <div className="app">
         <div className="card">
