@@ -17,13 +17,13 @@ class App extends React.Component {
   }
 
   fetchFact = () => {
-    axios.get('//numbersapi.com/random/trivia')
+    axios.get('http://numbersapi.com/random/trivia')
       .then((response) => {
-        //console.log(response.data);
+
         this.setState({ fact: response.data });
       })
       .catch((error) => {
-        console.log(error);
+        this.setState({ fact: "OOPS! Sorry Network error, Please retry." });
       });
   }
 
